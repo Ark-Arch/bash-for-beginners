@@ -1,0 +1,19 @@
+ls: cannot access './dur': No such file or directory
+ls: cannot access './dur': No such file or directory
+total 64
+-rw-rw-rw-  1 vscode root    444 Nov  8 20:25 CODE_OF_CONDUCT.md
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 create-resource-group
+-rw-rw-rw-  1 vscode vscode  106 Nov 12 05:49 error.txt
+-rw-rw-rw-  1 vscode root   1141 Nov  8 20:25 LICENSE
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 modifying-file-permissions
+-rw-rw-rw-  1 vscode root   3070 Nov  8 20:25 README.md
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 redirection-and-pipelines
+-rw-rw-rw-  1 vscode root   2757 Nov  8 20:25 SECURITY.md
+-rw-rw-rw-  1 vscode root   1244 Nov  8 20:25 SUPPORT.md
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 viewing-files
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 what-are-case-statements
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 what-are-conditional-statements
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 what-are-functions
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 what-are-loops
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 what-is-a-bash-script
+drwxrwxrwx+ 2 vscode root   4096 Nov  8 20:25 what-is-a-variable
