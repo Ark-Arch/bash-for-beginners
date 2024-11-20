@@ -1,0 +1,13 @@
+#!/bin/bash
+
+check_even () {
+    local mod=2
+    if [[ $(($1 % mod)) -eq 0 ]]; then 
+        echo "the number $1 is an even number"
+    else   
+        echo "the number $1 is not an even number";
+    fi
+}
+
+number=7
+check_even $number
