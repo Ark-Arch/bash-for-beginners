@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# open a new file
+name=play_file
+touch $name
+
+commands=("ls" "pwd")
+
+for i in ${commands[@]}
+do
+    $i >> $name
+    echo " " >> $name
+done
