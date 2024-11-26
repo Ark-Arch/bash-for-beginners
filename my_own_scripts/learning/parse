@@ -1,0 +1,19 @@
+#!/bin/bash
+
+parse_commandline() {
+    while [[ $# -gt 0 ]];
+    do 
+        key="$1"
+            case "$key" in 
+                -i|--install-dir)
+                    PARSED_INSTALL_DIR="$2"
+                        shift
+                ;;
+                -b|--bin-dir)
+                    PARSED_BIN_DIR="$2"
+                        shift
+                ;;
+            esac
+     done
+
+}

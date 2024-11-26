@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while [[ $# -gt 0 ]]
+do 
+    echo "processing argument: $1"
+    shift # this command will shift the focus to the next input argument
+done
