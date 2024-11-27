@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# function to download any package
+package_installer(){
+    local package=$1
+    echo "Installing $package... please wait..."
+    echo " "
+    sudo apt update -y
+    sudo apt install -y $package
+    echo "done installing $package"
+}
+
+# check and download pre-req when necessary
+pre_req_download(){
+    local package=unzip
+
+    if which $package &> /dev/null;
+    then
+        echo "the package exists: unzip"
+    else
+        echo "the package does not exist: unzip"
+        package_installer $package
+}
+
