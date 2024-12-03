@@ -75,7 +75,7 @@ configure_aws(){
         ;;
         *)
             echo "your response is not understandable"
-            echo "To configure later, use the command: aws configure"
+            echo "To configure later, use the 'áws configure'command"
             ;;
     esac
 }
