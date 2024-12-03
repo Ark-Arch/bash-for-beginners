@@ -22,3 +22,64 @@ pre_req_download(){
         package_installer $package
 }
 
+# to confirm what needs to be done
+what_action(){
+    local name=aws
+    if which aws &> /dev/null;
+    then
+        echo "the aws command already exists"
+        aws sts get-caller-identity
+        action="all is good"
+    else
+        echo "the aws command does not exist"
+        action="install aws command"
+}
+
+# download and install aws cli
+download_aws(){
+    if [[ "$action" == "install aws command" ]]
+    then
+        #DOWNLOAD USING THE CURL COMMAND
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        
+        # UNZIP USING THE UNZIP PACKAGE
+        unzip awscliv2.zip
+
+        # RUN THE INSTALLER
+        sudo ./aws/install
+
+        # VERIFY THE INSTALLER
+        echo "aws has been installed..."
+        aws --version
+    elif [[ "$action" == "all is good" ]]
+    then
+        echo " "
+    fi
+}
+
+# CONFIGURE THE INSTALLED AWS COMMAND
+configure_aws(){
+    echo "Would you like to configure your AWS CLI now?(y/n)"
+    read -p ">> " response
+
+    case $response in
+        y)
+            # CONFIGURE THE CLI
+            aws configure
+        ;;
+        n)
+            # WE ARE DONE
+            echo "To configure later, use the command: "
+        ;;
+        *)
+            echo "your response is not understandable"
+            echo "To configure later, use the command: "
+            ;;
+    esac
+}
+
+# THE MAIN SCRIPT
+pre_req_download()
+what_action()
+download_aws()
+configure_aws()
