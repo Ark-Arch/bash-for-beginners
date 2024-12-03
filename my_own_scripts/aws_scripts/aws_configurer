@@ -20,6 +20,7 @@ pre_req_download(){
     else
         echo "the package does not exist: unzip"
         package_installer $package
+    fi
 }
 
 # to confirm what needs to be done
@@ -33,6 +34,7 @@ what_action(){
     else
         echo "the aws command does not exist"
         action="install aws command"
+    fi
 }
 
 # download and install aws cli
@@ -40,7 +42,7 @@ download_aws(){
     if [[ "$action" == "install aws command" ]]
     then
         #DOWNLOAD USING THE CURL COMMAND
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        curl -s "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
         
         # UNZIP USING THE UNZIP PACKAGE
         unzip awscliv2.zip
@@ -73,13 +75,13 @@ configure_aws(){
         ;;
         *)
             echo "your response is not understandable"
-            echo "To configure later, use the command: "
+            echo "To configure later, use the command: aws configure"
             ;;
     esac
 }
 
 # THE MAIN SCRIPT
-pre_req_download()
-what_action()
-download_aws()
-configure_aws()
+pre_req_download
+what_action
+download_aws
+configure_aws
